@@ -21,13 +21,14 @@ localTodos.push(input.value);
 localStorage.setItem("todos",JSON.stringify(localTodos))
 console.log(localTodos);
 input.value=" ";
-//showTodos();
+showTodos();
 })
+
 
 
 const showTodos=()=>{
     const todosHtml=todos().map((todo)=>{
-        return '<li> ${todo} X</<li>'
+        return `<li>${todo} X</li>`
     }).join("")
     list.innerHTML=todosHtml
 }
