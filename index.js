@@ -28,12 +28,16 @@ form.addEventListener("submit",(e)=>{
 
 const showTodos=()=>{
     const todosHtml = todos().map((todo)=>{
-        
-        let res= `<li>${todo}</li>`+"<button id=btn value="+`${todo}`+" onClick=edit()>e</button>"
+        const x=todo
+        console.log(x);
+       
+        let res= `<li>${todo}<button id=btn value='${x}' onClick='edit(this)'>e</button></li>`
 
         return res
     }).join()
-    list.innerHTML = todosHtml
+
+    
+    list.innerHTML=todosHtml
     
     //const x=document.getElementById("btn").addEventListener("click", edit());
 }
@@ -44,36 +48,47 @@ showTodos()
 
 function form2(){
     alert("hello");
-    edit_form.innerHTML= ` <form id="form2">
+
+    edit_form.innerHTML= `<form id="form2">
     <input type="text" id="input2"/>
-    <button id="edit-btn">Enter</button>
+    <button id="btn2">Save</button>
 </form>`
+ 
 
 }
 
-function edit(){
-    x=document.getElementById("btn");
-console.log(x);
-
+function edit(a){
+    //x=document.getElementById("btn");
+    let value_index=a.value;
     
+
     form2()
- 
 
-    let b=localStorage.getItem("todos");
-    const c=JSON.parse(b);
-    //console.log(c);
+    const h=document.getElementById("btn2").addEventListener("click", (e)=>{
+        e.preventDefault();
+        let b=localStorage.getItem("todos");
+        const c=JSON.parse(b);
+        //const newvalue=input2.value;
+        //console.log(newvalue);
+    
+        let i=c.indexOf(value_index);
 
-    let i=c.indexOf("gul");
-    console.log(i);
+        console.log(i);
+        
+        c[i]=input2.value;
+        //console.log(c);
+        
+        localStorage.setItem("todos",JSON.stringify(c))
+        console.log(c);
+        edit_form.innerHTML=""
+        showTodos()
+    });
+
+}
+
+
+
     
-    c[i]="apple";
-    //console.log(c);
-    
-    localStorage.setItem("todos",JSON.stringify(c))
-    console.log(c);
-    input.value="";
-    showTodos()
-     
 
 
 
@@ -84,6 +99,6 @@ console.log(x);
     //console.log(index);
   // newvalue(x.value);
     
-}
+
 
 
