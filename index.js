@@ -31,7 +31,7 @@ const showTodos=()=>{
         const x=todo
         console.log(x);
        
-        let res= `<li>${todo}<button id=btn value='${x}' onClick='edit(this)'>e</button></li>`
+        let res= `<li>${todo} <button id=btn value='${x}' onClick='edit(this)'>e</button></li>`
 
         return res
     }).join()
@@ -46,13 +46,14 @@ showTodos()
 
 ////Edit Function/////////////////
 
-function form2(){
+function form2(value_index){
    // alert("hello");
-
-    edit_form.innerHTML= `<form id="form2">
+   
+  
+    list.innerHTML=`<li>${value_index}<form id="form2">
     <input type="text" id="input2"/>
     <button id="btn2">Save</button>
-</form>`
+</form></li>`
  
 
 }
@@ -62,7 +63,7 @@ function edit(a){
     let value_index=a.value;
     
 
-    form2()
+    form2(value_index)
 
     const h=document.getElementById("btn2").addEventListener("click", (e)=>{
         e.preventDefault();
