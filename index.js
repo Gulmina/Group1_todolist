@@ -47,7 +47,7 @@ showTodos()
 ////Edit Function/////////////////
 
 function form2(){
-    alert("hello");
+   // alert("hello");
 
     edit_form.innerHTML= `<form id="form2">
     <input type="text" id="input2"/>
@@ -99,6 +99,3 @@ function edit(a){
     //console.log(index);
   // newvalue(x.value);
     
-
-
-
