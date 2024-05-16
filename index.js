@@ -46,17 +46,17 @@ showTodos()
 
 ////Edit Function/////////////////
 
-function form2(value_index){
+/* function form2(value_index){
    // alert("hello");
    
   
    /*  list.innerHTML=`<li>${value_index}<form id="form2">
     <input type="text" id="input2"/>
     <button id="btn2">Save</button>
-</form></li>` */
+</form></li>` 
  
 
-}
+} */
 
 function edit(a){
     //x=document.getElementById("btn");
