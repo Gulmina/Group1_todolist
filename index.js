@@ -50,20 +50,27 @@ function form2(value_index){
    // alert("hello");
    
   
-    list.innerHTML=`<li>${value_index}<form id="form2">
+   /*  list.innerHTML=`<li>${value_index}<form id="form2">
     <input type="text" id="input2"/>
     <button id="btn2">Save</button>
-</form></li>`
+</form></li>` */
  
 
 }
 
 function edit(a){
     //x=document.getElementById("btn");
+    
     let value_index=a.value;
     
 
-    form2(value_index)
+   // form2(value_index)
+
+   list.innerHTML=`<li>${value_index}<form id="form2">
+   <input type="text" id="input2"/>
+   <button id="btn2">Save</button>
+</form></li>`
+
 
     const h=document.getElementById("btn2").addEventListener("click", (e)=>{
         e.preventDefault();
@@ -74,7 +81,7 @@ function edit(a){
     
         let i=c.indexOf(value_index);
 
-        console.log(i);
+        //console.log(i);
         
         c[i]=input2.value;
         //console.log(c);
