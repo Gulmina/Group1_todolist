@@ -28,10 +28,9 @@ form.addEventListener("submit",(e)=>{
 
 const showTodos=()=>{
     const todosHtml = todos().map((todo)=>{
-        const x=todo
-        console.log(x);
+      
        
-        let res= `<li>${todo} <button id=btn value='${x}' onClick='edit(this)'>e</button></li>`
+        let res= `<li><input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this)'>e</button></li>`
 
         return res
     }).join()
@@ -43,6 +42,18 @@ const showTodos=()=>{
 }
 
 showTodos()
+
+
+ 
+const mark=document.getElementById("mark");
+mark.addEventListener("click",(e)=>{
+    e.preventDefault()
+    console.log(123)
+    let a=document.getElementById("mark").checked;
+   
+    });
+
+ 
 
 ////Edit Function/////////////////
 
@@ -74,10 +85,14 @@ function edit(a){
 
     const h=document.getElementById("btn2").addEventListener("click", (e)=>{
         e.preventDefault();
+
+
         let b=localStorage.getItem("todos");
+
         const c=JSON.parse(b);
         //const newvalue=input2.value;
         //console.log(newvalue);
+        //console.log(b);
     
         let i=c.indexOf(value_index);
 
