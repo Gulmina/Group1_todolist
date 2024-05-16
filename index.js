@@ -27,10 +27,10 @@ form.addEventListener("submit",(e)=>{
 
 
 const showTodos=()=>{
-    const todosHtml = todos().map((todo)=>{
+    const todosHtml = todos().map((todo,index)=>{
       
        
-        let res= `<li><input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this)'>e</button></li>`
+        let res= `<li><input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this,${index})'>e</button></li>`
 
         return res
     }).join()
@@ -57,30 +57,29 @@ mark.addEventListener("click",(e)=>{
 
 ////Edit Function/////////////////
 
-/* function form2(value_index){
+ function form2(value){
    // alert("hello");
    
   
-   /*  list.innerHTML=`<li>${value_index}<form id="form2">
+     list.innerHTML=`<li>${value}<form id="form2">
     <input type="text" id="input2"/>
     <button id="btn2">Save</button>
 </form></li>` 
  
 
-} */
+} 
 
-function edit(a){
+function edit(a,index){
     //x=document.getElementById("btn");
-    
-    let value_index=a.value;
-    
+    console.log(a.value);
+    console.log(index);
 
-   // form2(value_index)
+    //let value_index=a.value;
+    //console.log(value_index)
 
-   list.innerHTML=`<li>${value_index}<form id="form2">
-   <input type="text" id="input2"/>
-   <button id="btn2">Save</button>
-</form></li>`
+   form2(a.value)
+
+   
 
 
     const h=document.getElementById("btn2").addEventListener("click", (e)=>{
@@ -94,11 +93,11 @@ function edit(a){
         //console.log(newvalue);
         //console.log(b);
     
-        let i=c.indexOf(value_index);
+       // let i=c.indexOf(a.value);
 
         //console.log(i);
         
-        c[i]=input2.value;
+        c[index]=input2.value;
         //console.log(c);
         
         localStorage.setItem("todos",JSON.stringify(c))
@@ -121,4 +120,3 @@ function edit(a){
    // const index= localTodos.indexOf(x);
     //console.log(index);
   // newvalue(x.value);
-    
