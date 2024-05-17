@@ -31,8 +31,8 @@ const showTodos=()=>{
     const todosHtml = todos().map((todo,index)=>{
       
 
-        let res= `<li><input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this,${index})'>Edit</button>
-        <button onclick="deleteTodo(${index})">Delete</button> </li>`
+        let res= `<ul><div style="font-weight: bold;"> ${todo}</div> <div> <button id=btn style="padding:3px" value='${todo}' onClick='edit(this,${index})'>Edit</button>  <button onclick="deleteTodo(${index})">Delete</button>  <input type="checkbox" id="mark" onClick='mark()'> </checkbox></div></ul>`
+
   
         return res
     }).join("")
@@ -57,29 +57,15 @@ showTodos()
 
 
  
-const mark=document.getElementById("mark");
-mark.addEventListener("click",(e)=>{
-    e.preventDefault()
-    console.log(123)
+function mark(){
+    
+    //alert(2);
     let a=document.getElementById("mark").checked;
-   
-    });
+  }
 
  
 
 ////Edit Function/////////////////
-
- function form2(value){
-   // alert("hello");
-   
-  
-     list.innerHTML=`<li>${value}<form id="form2">
-    <input type="text" id="input2"/>
-    <button id="btn2">Save</button>
-</form></li>` 
- 
-
-} 
 
 function edit(a,index){
     //x=document.getElementById("btn");
@@ -89,26 +75,17 @@ function edit(a,index){
     //let value_index=a.value;
     //console.log(value_index)
 
-   form2(a.value)
-
-   
+    list.innerHTML=`<ul style="font-weight: bold;">${a.value}<form id="form2">
+    <input type="text" id="input2"/>
+    <button id="btn2">Save</button>
+</form></ul>` 
 
 
     const h=document.getElementById("btn2").addEventListener("click", (e)=>{
         e.preventDefault();
+  let b=localStorage.getItem("todos");
 
-
-        let b=localStorage.getItem("todos");
-
-        const c=JSON.parse(b);
-        //const newvalue=input2.value;
-        //console.log(newvalue);
-        //console.log(b);
-    
-       // let i=c.indexOf(a.value);
-
-        //console.log(i);
-        
+        const c=JSON.parse(b);   
         c[index]=input2.value;
         //console.log(c);
         
@@ -119,16 +96,3 @@ function edit(a,index){
     });
 
 }
-
-
-
-    
-
-
-
-// const l=localStorage.getItem(x);
-// console.log(l);
- 
-   // const index= localTodos.indexOf(x);
-    //console.log(index);
-  // newvalue(x.value);

@@ -10,10 +10,24 @@ body {
     background-repeat: no-repeat;
     font-family: "Popins";
     height: 100vh;
+    
+}
+
+main{
+    margin:5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    
+
+}
+
+#nav_bar{
+    
+    padding:2rem;  
+    
 }
 header {
     font-size: 3rem;
@@ -21,7 +35,8 @@ header {
 }
 
 header,form {
-    min-height: 20vh;
+    
+    min-height: 10vh;
     display: flex;
     align-items: center;
 }
@@ -52,4 +67,31 @@ form button:hover {
   color: white;
   transition: all 0.3s ease;
 
+}
+
+
+#list_body{
+ 
+    padding:0.5rem;
+    
+    min-width: 100%;
+    
+   
+}
+
+#list{
+    border:none;
+    border-radius:  5px 0 0 5px ;
+   padding:1rem;
+    max-width: 100%;
+    background-color: white;
+}
+
+#list>ul{
+    background-color: white;
+    display: flex;
+   justify-content: space-between;
+   
+   margin:0.5rem;
+   border-radius:  5px 0 0 5px ;
 }
