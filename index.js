@@ -30,14 +30,7 @@ form.addEventListener("submit", (e) => {
 const showTodos = () => {
   const todosHtml = todos()
     .map((todo, index) => {
-      let res = `<li>
-        <input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this,${index})'>
-        <i id="editBtn" class="fa-solid fa-pen-to-square">
-        </i></button>
-        <button onclick="deleteTodo(${index})">
-        <i id="deleteBtn" class="fa-solid fa-trash"></i></button>
-        </li>`;
-
+        let res= `<ul><div style="font-weight: bold;"> ${todo}</div> <div> <button id=btn style="padding:3px" value='${todo}' onClick='edit(this,${index})'><i id="editBtn" class="fa-solid fa-pen-to-square"></i></button>  <button onclick="deleteTodo(${index})"><i id="deleteBtn" class="fa-solid fa-trash"></i></button>  <input type="checkbox" id="mark" onClick='mark()'></checkbox></div></ul>`
       return res;
     })
     .join("");
