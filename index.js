@@ -56,25 +56,19 @@ const deleteTodo = (index) => {
   showTodos();
 };
 
-showTodos();
+showTodos()
 
-const mark = document.getElementById("mark");
-mark.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(123);
-  let a = document.getElementById("mark").checked;
-});
+
+ 
+function mark(){
+    
+    //alert(2);
+    let a=document.getElementById("mark").checked;
+  }
+
+ 
 
 ////Edit Function/////////////////
-
-function form2(value) {
-  // alert("hello");
-
-  list.innerHTML = `<li>${value}<form id="form2">
-    <input type="text" id="input2"/>
-    <button id="btn2">Save</button>
-</form></li>`;
-}
 
 function edit(a, index) {
   //x=document.getElementById("btn");
@@ -84,35 +78,24 @@ function edit(a, index) {
   //let value_index=a.value;
   //console.log(value_index)
 
-  form2(a.value);
+    list.innerHTML=`<ul style="font-weight: bold;">${a.value}<form id="form2">
+    <input type="text" id="input2"/>
+    <button id="btn2">Save</button>
+</form></ul>` 
 
-  const h = document.getElementById("btn2").addEventListener("click", (e) => {
-    e.preventDefault();
 
-    let b = localStorage.getItem("todos");
+    const h=document.getElementById("btn2").addEventListener("click", (e)=>{
+        e.preventDefault();
+  let b=localStorage.getItem("todos");
 
-    const c = JSON.parse(b);
-    //const newvalue=input2.value;
-    //console.log(newvalue);
-    //console.log(b);
+        const c=JSON.parse(b);   
+        c[index]=input2.value;
+        //console.log(c);
+        
+        localStorage.setItem("todos",JSON.stringify(c))
+        console.log(c);
+        edit_form.innerHTML=""
+        showTodos()
+    });
 
-    // let i=c.indexOf(a.value);
-
-    //console.log(i);
-
-    c[index] = input2.value;
-    //console.log(c);
-
-    localStorage.setItem("todos", JSON.stringify(c));
-    console.log(c);
-    edit_form.innerHTML = "";
-    showTodos();
-  });
 }
-
-// const l=localStorage.getItem(x);
-// console.log(l);
-
-// const index= localTodos.indexOf(x);
-//console.log(index);
-// newvalue(x.value);
