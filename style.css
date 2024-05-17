@@ -53,3 +53,34 @@ form button:hover {
   transition: all 0.3s ease;
 
 }
+
+#list {
+    list-style: none;
+    min-width: 30%;
+}
+
+/* #list-container, li {
+    flex: 1;
+} */
+li {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#editBtn, #deleteBtn {
+    color: white;
+    background: orangered;
+    border-style: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#editBtn{
+    background: orange;
+
+}
