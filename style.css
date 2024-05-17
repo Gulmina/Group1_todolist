@@ -88,10 +88,28 @@ form button:hover {
 }
 
 #list>ul{
-    background-color: white;
+    background: rgba(0, 128, 0, 0.24);
     display: flex;
    justify-content: space-between;
-   
+   padding:1rem;
    margin:0.5rem;
    border-radius:  5px 0 0 5px ;
+
+   
+}
+
+ul button {
+    color: rgb(0, 128, 0);
+    border-radius: 0 5px 5px 0;
+padding: 5px;
+    /* background: white; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+ul button:hover {
+    background: rgb(0, 128, 0);
+  color: white;
+  transition: all 0.3s ease;
+
 }
