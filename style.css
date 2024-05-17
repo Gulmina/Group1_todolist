@@ -2,17 +2,44 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-}
-
-body{
-    
-    margin: 5rem;
     
 }
 
-ul{
 
-    padding: 1rem;
 
+
+main{
+    background-color: rgba(235, 221, 221, 0.425);
+  margin:5rem;
+  
+  text-align: center;
+    
 }
+
+#nav_bar{
+    border: 1px solid indigo;
+    padding:2rem;
+    background-color: rgb(7, 12, 63);
+    color: white;
+    
+}
+
+#list_body{
+    padding:1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+#list{
+   
+    min-width: 100%;
+}
+
+#list>ul{
+    
+    display: flex;
+   justify-content: space-between;
+}
+
 

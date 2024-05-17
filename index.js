@@ -28,9 +28,9 @@ form.addEventListener("submit",(e)=>{
 
 const showTodos=()=>{
     const todosHtml = todos().map((todo,index)=>{
-      
-       
-        let res= `<li><input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this,${index})'>e</button></li>`
+        
+        let res= `<ul><div style="font-weight: bold;"> ${todo}</div><div> <button id=btn style="padding:3px" value='${todo}' onClick='edit(this,${index})'>Edit</button><span></span> <input type="checkbox" id="mark" onClick='mark()'> <mark>Mark as read</mark></checkbox></div></ul>`
+
 
         return res
     }).join()
@@ -44,30 +44,17 @@ const showTodos=()=>{
 showTodos()
 
 
- 
-const mark=document.getElementById("mark");
-mark.addEventListener("click",(e)=>{
-    e.preventDefault()
-    console.log(123)
+function mark(){
+    
+    //alert(2);
     let a=document.getElementById("mark").checked;
-   
-    });
+  }
 
  
 
 ////Edit Function/////////////////
 
- function form2(value){
-   // alert("hello");
-   
-  
-     list.innerHTML=`<li>${value}<form id="form2">
-    <input type="text" id="input2"/>
-    <button id="btn2">Save</button>
-</form></li>` 
  
-
-} 
 
 function edit(a,index){
     //x=document.getElementById("btn");
@@ -77,7 +64,10 @@ function edit(a,index){
     //let value_index=a.value;
     //console.log(value_index)
 
-   form2(a.value)
+    list.innerHTML=`<li>${a.value}<form id="form2">
+    <input type="text" id="input2"/>
+    <button id="btn2">Save</button>
+</form></li>` 
 
    
 
