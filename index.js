@@ -30,12 +30,13 @@ form.addEventListener("submit",(e)=>{
 const showTodos=()=>{
     const todosHtml = todos().map((todo,index)=>{
       
-       
+
         let res= `<li><input type="checkbox" id="mark" value='${todo}' > ${todo} <button id=btn value='${todo}' onClick='edit(this,${index})'>Edit</button>
         <button onclick="deleteTodo(${index})">Delete</button> </li>`
   
         return res
     }).join("")
+
 
     
     list.innerHTML=todosHtml
