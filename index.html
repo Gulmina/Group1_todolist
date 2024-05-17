@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
-    <link href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <h1>Enter Something !!</h1>
-    
+    <!-- <div class="todo-container"> -->
+        <header>Your ToDo List!</header>
+        
+        <form id="form">
+            <input type="text" id="input"
+             />
+            <button><i class="fas fa-plus-square"></i></button>
+        </form>
+        <ul>
+        <ul id="list"></ul>
+        
+           <!--  <ul id="edit_form"></ul> -->
+           <ul id="edit_form"></ul>
+        </ul>
+    <!-- </div> -->
 
-    <form id="form">
-        <input type="text" id="input" 
-         />
-        <button>Submit</button>
-    </form>
+    <!-- <ul id="edit_form"></ul>  -->
+  
+   
 
-    <ul id="list">
 
-    </ul>
+
 </body>
 <script src="index.js"></script>
 </html>
